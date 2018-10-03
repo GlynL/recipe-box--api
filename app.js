@@ -14,6 +14,7 @@ const users = require("./routes/users");
 //   }
 // }
 app.use(helmet());
+app.options("*", cors()); // add support to all route for PUT/DELETE
 app.use(
   cors({
     origin: "http://localhost:3000",
