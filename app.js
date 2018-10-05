@@ -17,7 +17,7 @@ app.use(helmet());
 app.options("*", cors()); // add support to all route for PUT/DELETE
 app.use(
   cors({
-    origin: "https://glynlewington.com",
+    origin: ["https://glynlewington.com", "http://localhost:3000"],
     optionsSuccessStatus: 200
   })
 );
