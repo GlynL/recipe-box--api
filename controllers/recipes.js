@@ -16,6 +16,8 @@ exports.getRecipe = (req, res, next) => {
 exports.addRecipe = async (req, res, next) => {
   try {
     let recipe = req.body;
+    recipe.ingredients = JSON.parse(req.body.ingredients);
+    recipe.method = JSON.parse(req.body.method);
     recipe.image = {};
     if (req.file) {
       recipe.image.url = req.file.secure_url;
